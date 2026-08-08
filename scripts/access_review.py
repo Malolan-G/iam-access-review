@@ -83,3 +83,9 @@ df_loginDT = pd.to_datetime(df_login["timestamp"]).dt.hour
 business_hours = df_login[(df_loginDT < 9) | (df_loginDT >= 17)]
 print(f"Logins Outside of Business Hours:\n")
 print(f"{business_hours}\n")
+
+# Successful logins from an IP that generated repeated failures
+threshIP_logins = df_login[df_login["source_ip"].isin(df_threshIP.index)]
+loginFailIP = threshIP_logins[threshIP_logins["status"] == "SUCCESS"]
+print(f"Successful Logins from an IP that Generated Repeated Failures Are:\n")
+print(f"{loginFailIP}\n")
