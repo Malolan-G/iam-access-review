@@ -1,0 +1,21 @@
+user_id,name,department,role,employment_status,last_login,mfa_enabled
+U001,Alice Johnson,IT,Systems Administrator,Active,2026-08-04,TRUE
+U002,Brian Smith,Finance,Financial Analyst,Active,2026-08-03,TRUE
+U003,Carla Diaz,HR,HR Specusialist,Active,2026-08-05,TRUE
+U004,David Lee,Sales,Sales Representative,Active,2026-08-01,FALSE
+U005,Emma Wilson,Marketing,Marketing Coordinator,Active,2026-07-30,TRUE
+U006,Frank Torres,IT,Support Engineer,Active,2026-08-02,TRUE
+U007,Grace Kim,Finance,Accountant,Active,2026-08-04,TRUE
+U008,Henry Adams,Operations,Operations Manager,Active,2026-07-28,TRUE
+U009,Isla Brown,Sales,Sales Manager,Active,2026-08-03,TRUE
+U010,Jack Turner,IT,Network Engineer,Active,2026-08-01,FALSE
+U011,Karen White,HR,Recruiter,Active,2026-07-31,TRUE
+U012,Liam Scott,Legal,Legal Counsel,Active,2026-08-02,TRUE
+U013,Maria Gonzalez,Finance,Finance Manager,Active,2026-08-04,TRUE
+U014,Noah Baker,Marketing,Content Writer,Active,2026-07-29,TRUE
+U015,Olivia Martinez,Sales,Sales Representative,Terminated,2026-03-15,TRUE
+U016,Peter Nguyen,Operations,Warehouse Associate,Active,2026-04-10,TRUE
+U017,Quinn Davis,IT,Helpdesk Technician,Active,2026-08-05,TRUE
+U018,Rachel Green,HR,HR Director,Active,2026-08-03,TRUE
+U019,Sam Patel,Engineering,Software Engineer,Active,2026-08-04,TRUE
+U020,Tina Brooks,Engineering,QA Engineer,Active,2026-08-02,TRUE

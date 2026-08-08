@@ -1,0 +1,30 @@
+user_id,system,permission_level,business_need
+U001,Cloud Console,Admin,Manages cloud infrastructure for IT
+U001,GitHub,Admin,Manages source control and CI/CD for IT
+U002,Payroll,Read,Reviews payroll data for financial reporting
+U003,HR System,Write,Maintains employee records
+U004,Customer Database,Read,Looks up customer accounts for sales calls
+U004,Marketing Platform,Admin,
+U005,Marketing Platform,Write,Manages marketing campaigns
+U006,Cloud Console,Write,Provides IT support for cloud resources
+U006,GitHub,Read,Reviews code for support tickets
+U007,Payroll,Write,Processes payroll transactions
+U008,Cloud Console,Read,Monitors operations infrastructure
+U009,Customer Database,Admin,Manages sales team access to customer records
+U010,Cloud Console,Admin,Manages network infrastructure
+U010,GitHub,Write,Maintains network automation scripts
+U011,HR System,Read,Reviews candidate and employee records
+U012,HR System,Read,Reviews employee records for legal matters
+U012,Customer Database,Read,Reviews contracts tied to customer accounts
+U013,Payroll,Admin,Oversees payroll operations for finance
+U014,Marketing Platform,Write,Publishes marketing content
+U014,Payroll,Read,
+U015,Customer Database,Write,Sales lead and account management
+U016,Cloud Console,Read,Warehouse inventory system monitoring
+U017,GitHub,Read,Reviews code for helpdesk support tickets
+U017,Cloud Console,Read,Assists with cloud account resets
+U018,HR System,Admin,Oversees all HR system records
+U018,Payroll,Read,Reviews payroll for HR compliance
+U019,GitHub,Write,Develops and maintains application code
+U019,Cloud Console,Write,Deploys application infrastructure
+U020,GitHub,Read,Reviews code for QA testing
