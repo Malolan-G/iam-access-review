@@ -89,3 +89,15 @@ threshIP_logins = df_login[df_login["source_ip"].isin(df_threshIP.index)]
 loginFailIP = threshIP_logins[threshIP_logins["status"] == "SUCCESS"]
 print(f"Successful Logins from an IP that Generated Repeated Failures Are:\n")
 print(f"{loginFailIP}\n")
+
+# Users without MFA involved in suspicious activity
+suspicionMarker = df_login[(df_login["source_ip"].isin(df_threshIP.index))|((df_loginDT < 9) | (df_loginDT >= 17))|(df_login["country"] != "United States")|(df_login["user_id"].isin(loginFailIP["user_id"]))]
+marker_users = pd.merge(
+        suspicionMarker,
+        df_users,
+        on = "user_id"
+)
+suspiciousMFA = marker_users[marker_users["mfa_enabled"] == False]
+suspiciousMFA = suspiciousMFA.drop_duplicates("username")
+print(f"A List of All Suspicious Users (without MFA enabled)\n")
+print(f"{suspiciousMFA}\n")
