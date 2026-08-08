@@ -21,7 +21,7 @@ print("Users Without MFA Enabled Are:\n")
 print(f"{notMFA}\n")
 
 # Finding Inactive Employees Function (Not active for 90 days)
-def isActive(df, refDate):
+def isInactive(df, refDate):
         Login = pd.to_datetime(df["last_login"])
         refDT = pd.Timestamp(refDate)
         timeDiff = refDT - Login
@@ -30,7 +30,7 @@ def isActive(df, refDate):
 
 
 # Finding Inactive Employees
-inactive_employees = (isActive(df_users, "2026-08-05")) & (df_users["employment_status"] == "Active")
+inactive_employees = (isInactive(df_users, "2026-08-05")) & (df_users["employment_status"] == "Active")
 print("Inactive Users Are:\n")
 print(f"{df_users[inactive_employees]}\n")
 
@@ -48,7 +48,7 @@ print(f"Users Joined with Permissions:\n")
 print(f"{df_joinedUA}\n")
 
 # Terminated Users with Access
-df_haveAccess = df_joinedUA[(df_joinedUA["employment_status"] == "Terminated") | ((df_joinedUA["employment_status"] == "Active") & (isActive(df_joinedUA, "2026-08-05")) )]
+df_haveAccess = df_joinedUA[(df_joinedUA["employment_status"] == "Terminated") | ((df_joinedUA["employment_status"] == "Active") & (isInactive(df_joinedUA, "2026-08-05")) )]
 print(f"Terminated or Inactive Users with Access Are:\n")
 print(f"{df_haveAccess}\n")
 
@@ -56,3 +56,18 @@ print(f"{df_haveAccess}\n")
 df_adminAccess = df_access[(df_access["permission_level"] == "Admin") & (df_access["business_need"].isnull())]
 print(f"Users with Unnecessary Admin Access Are:\n")
 print(f"{df_adminAccess}\n")
+
+# SUSPICIOUS IP'S
+
+df_statusFail = df_login[df_login["status"] == "FAILURE"]
+
+# Failed attempts by source IP
+df_failIP = df_statusFail.groupby("source_ip").size().sort_values(ascending=False)
+print(f"Failed Login Attempts per IP\n")
+print(f"{df_failIP}\n")
+
+# Failed attempts by username
+df_failUser = df_statusFail.groupby("username").size().sort_values(ascending=False)
+print(f"Number of Failed Login Attempts for each User:\n")
+print(f"{df_failUser}\n")
+
