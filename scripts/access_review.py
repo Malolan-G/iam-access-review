@@ -63,11 +63,23 @@ df_statusFail = df_login[df_login["status"] == "FAILURE"]
 
 # Failed attempts by source IP
 df_failIP = df_statusFail.groupby("source_ip").size().sort_values(ascending=False)
+df_failIP = df_failIP.rename("Login Attempts")
 print(f"Failed Login Attempts per IP\n")
 print(f"{df_failIP}\n")
 
 # Failed attempts by username
 df_failUser = df_statusFail.groupby("username").size().sort_values(ascending=False)
+df_failUser = df_failUser.rename("Login Attempts")
 print(f"Number of Failed Login Attempts for each User:\n")
 print(f"{df_failUser}\n")
 
+# IP's exceeding threshold
+df_threshIP = df_failIP[df_failIP > 3]
+print(f"IP's Exceeding Failed Login Threshold Are:\n")
+print(f"{df_threshIP}\n")
+
+# Logins outside business hours
+df_loginDT = pd.to_datetime(df_login["timestamp"]).dt.hour
+business_hours = df_login[(df_loginDT < 9) | (df_loginDT >= 17)]
+print(f"Logins Outside of Business Hours:\n")
+print(f"{business_hours}\n")
