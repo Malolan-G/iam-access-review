@@ -1,7 +1,7 @@
 user_id,name,department,role,employment_status,last_login,mfa_enabled
 U001,Alice Johnson,IT,Systems Administrator,Active,2026-08-04,TRUE
 U002,Brian Smith,Finance,Financial Analyst,Active,2026-08-03,TRUE
-U003,Carla Diaz,HR,HR Specusialist,Active,2026-08-05,TRUE
+U003,Carla Diaz,HR,HR Specialist,Active,2026-08-05,TRUE
 U004,David Lee,Sales,Sales Representative,Active,2026-08-01,FALSE
 U005,Emma Wilson,Marketing,Marketing Coordinator,Active,2026-07-30,TRUE
 U006,Frank Torres,IT,Support Engineer,Active,2026-08-02,TRUE
